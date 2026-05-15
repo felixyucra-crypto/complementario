@@ -9,24 +9,13 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: #1a1a1a;
+    background: #ffffff;
     font-family: 'Barlow', sans-serif;
     min-height: 100vh;
-    padding: 40px 24px 60px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-  }
-
-  h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 1.6rem;
-    color: #fff;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-    opacity: .85;
+    justify-content: center;
+    padding: 40px 24px;
   }
 
   .foros-grid {
@@ -37,7 +26,6 @@
     max-width: 1100px;
   }
 
-  /* ── BANNER CARD ── */
   a.banner {
     display: flex;
     flex-direction: column;
@@ -48,16 +36,15 @@
     overflow: hidden;
     position: relative;
     height: 140px;
-    box-shadow: 0 6px 24px rgba(0,0,0,.45);
+    box-shadow: 0 6px 24px rgba(0,0,0,.25);
     transition: transform .2s, box-shadow .2s;
-    background: linear-gradient(160deg, #c0392b 0%, #e74c3c 40%, #e8652a 70%, #f0984a 100%);
-  }
-  a.banner:hover {
-    transform: translateY(-3px) scale(1.012);
-    box-shadow: 0 12px 36px rgba(0,0,0,.55);
   }
 
-  /* Subtle noise/texture overlay */
+  a.banner:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 14px 40px rgba(0,0,0,.35);
+  }
+
   a.banner::before {
     content: '';
     position: absolute; inset: 0;
@@ -66,7 +53,6 @@
     z-index: 1;
   }
 
-  /* Top section: label + line */
   .banner-top {
     position: relative; z-index: 2;
     width: 100%;
@@ -94,7 +80,6 @@
     filter: drop-shadow(0 1px 3px rgba(0,0,0,.3));
   }
 
-  /* Middle: big title */
   .banner-text {
     position: relative; z-index: 2;
     width: 100%;
@@ -114,7 +99,6 @@
     text-shadow: 0 2px 6px rgba(0,0,0,.3);
   }
 
-  /* Bottom: people icon right-aligned */
   .banner-bottom {
     position: relative; z-index: 2;
     width: 100%;
@@ -127,46 +111,15 @@
     filter: drop-shadow(0 2px 5px rgba(0,0,0,.35));
   }
 
-  /* Hover glow */
-  a.banner:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 14px 40px rgba(0,0,0,.6);
-  }
-
-  /* Responsive: 2 columns on tablet, 1 on mobile */
   @media (max-width: 700px) {
     .foros-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 400px) {
     .foros-grid { grid-template-columns: 1fr; }
   }
-
-  /* ── EDIT NOTE ── */
-  .edit-note {
-    margin-top: 36px;
-    background: #2a2a2a;
-    border: 1px solid #3a3a3a;
-    border-radius: 10px;
-    padding: 20px 24px;
-    color: #aaa;
-    font-size: .82rem;
-    line-height: 1.7;
-    max-width: 680px;
-    width: 100%;
-  }
-  .edit-note strong { color: #e8652a; }
-  .edit-note code {
-    background: #333;
-    color: #f0984a;
-    padding: 1px 6px;
-    border-radius: 4px;
-    font-size: .8rem;
-  }
 </style>
 </head>
 <body>
-
-<h1>Foros del Curso</h1>
 
 <div class="foros-grid">
 
@@ -218,16 +171,6 @@
     <div class="banner-bottom"><span class="icon-people">👥</span></div>
   </a>
 
-</div>
-
-<!-- INSTRUCCIONES -->
-<div class="edit-note">
-  <strong>¿Cómo personalizar?</strong><br>
-  Para cada banner solo cambia:<br>
-  • <code>href="TU_LINK_AQUI"</code> → pon la URL del foro.<br>
-  • El texto <code>Foro 01</code> por el número que corresponda.<br>
-  • El título <code>COMPLEMENTARIO</code> si necesitas otro nombre.<br>
-  Para <strong>agregar más foros</strong>, copia y pega un bloque <code>&lt;a class="banner"&gt;...&lt;/a&gt;</code> completo. Se acomodarán solos en la fila.
 </div>
 
 </body>

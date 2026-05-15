@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foros Complementarios</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1a1a;
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+    padding: 40px 24px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #fff;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    opacity: .85;
+  }
+
+  .foros-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  /* ── BANNER CARD ── */
+  a.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 140px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.45);
+    transition: transform .2s, box-shadow .2s;
+    background: linear-gradient(160deg, #c0392b 0%, #e74c3c 40%, #e8652a 70%, #f0984a 100%);
+  }
+  a.banner:hover {
+    transform: translateY(-3px) scale(1.012);
+    box-shadow: 0 12px 36px rgba(0,0,0,.55);
+  }
+
+  /* Subtle noise/texture overlay */
+  a.banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Top section: label + line */
+  .banner-top {
+    position: relative; z-index: 2;
+    width: 100%;
+    padding: 12px 14px 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .banner-top .subtitle {
+    font-size: .7rem;
+    font-weight: 600;
+    color: rgba(255,255,255,.85);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .banner-top .line {
+    flex: 1;
+    height: 2px;
+    background: rgba(255,255,255,.45);
+    border-radius: 2px;
+  }
+  .banner-top .icon-chat {
+    font-size: 1.3rem;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,.3));
+  }
+
+  /* Middle: big title */
+  .banner-text {
+    position: relative; z-index: 2;
+    width: 100%;
+    padding: 0 14px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .banner-text .title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+
+  /* Bottom: people icon right-aligned */
+  .banner-bottom {
+    position: relative; z-index: 2;
+    width: 100%;
+    padding: 0 12px 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .banner-bottom .icon-people {
+    font-size: 2.2rem;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,.35));
+  }
+
+  /* Hover glow */
+  a.banner:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 14px 40px rgba(0,0,0,.6);
+  }
+
+  /* Responsive: 2 columns on tablet, 1 on mobile */
+  @media (max-width: 700px) {
+    .foros-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 400px) {
+    .foros-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── EDIT NOTE ── */
+  .edit-note {
+    margin-top: 36px;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 10px;
+    padding: 20px 24px;
+    color: #aaa;
+    font-size: .82rem;
+    line-height: 1.7;
+    max-width: 680px;
+    width: 100%;
+  }
+  .edit-note strong { color: #e8652a; }
+  .edit-note code {
+    background: #333;
+    color: #f0984a;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: .8rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Foros del Curso</h1>
+
+<div class="foros-grid">
+
+  <!-- 🔽 FORO 1: cambia href por tu link -->
+  <a class="banner" href="TU_LINK_AQUI" target="_blank"
+     style="background: linear-gradient(160deg,#b52a1e 0%,#e0392b 38%,#e8652a 68%,#f0984a 100%);">
+    <div class="banner-top">
+      <span class="subtitle">Foro 01</span>
+      <span class="line"></span>
+      <span class="icon-chat">💬</span>
+    </div>
+    <div class="banner-text"><span class="title">COMPLEMENTARIO</span></div>
+    <div class="banner-bottom"><span class="icon-people">👥</span></div>
+  </a>
+
+  <!-- 🔽 FORO 2: cambia href por tu link -->
+  <a class="banner" href="TU_LINK_AQUI" target="_blank"
+     style="background: linear-gradient(160deg,#c0300a 0%,#e84e1b 38%,#e87020 68%,#f5a83a 100%);">
+    <div class="banner-top">
+      <span class="subtitle">Foro 02</span>
+      <span class="line"></span>
+      <span class="icon-chat">💬</span>
+    </div>
+    <div class="banner-text"><span class="title">COMPLEMENTARIO</span></div>
+    <div class="banner-bottom"><span class="icon-people">👥</span></div>
+  </a>
+
+  <!-- 🔽 FORO 3: cambia href por tu link -->
+  <a class="banner" href="TU_LINK_AQUI" target="_blank"
+     style="background: linear-gradient(160deg,#b52a1e 0%,#e0392b 38%,#e8652a 68%,#f0984a 100%);">
+    <div class="banner-top">
+      <span class="subtitle">Foro 03</span>
+      <span class="line"></span>
+      <span class="icon-chat">💬</span>
+    </div>
+    <div class="banner-text"><span class="title">COMPLEMENTARIO</span></div>
+    <div class="banner-bottom"><span class="icon-people">👥</span></div>
+  </a>
+
+  <!-- 🔽 FORO 4: cambia href por tu link -->
+  <a class="banner" href="TU_LINK_AQUI" target="_blank"
+     style="background: linear-gradient(160deg,#c0300a 0%,#e84e1b 38%,#e87020 68%,#f5a83a 100%);">
+    <div class="banner-top">
+      <span class="subtitle">Foro 04</span>
+      <span class="line"></span>
+      <span class="icon-chat">💬</span>
+    </div>
+    <div class="banner-text"><span class="title">COMPLEMENTARIO</span></div>
+    <div class="banner-bottom"><span class="icon-people">👥</span></div>
+  </a>
+
+</div>
+
+<!-- INSTRUCCIONES -->
+<div class="edit-note">
+  <strong>¿Cómo personalizar?</strong><br>
+  Para cada banner solo cambia:<br>
+  • <code>href="TU_LINK_AQUI"</code> → pon la URL del foro.<br>
+  • El texto <code>Foro 01</code> por el número que corresponda.<br>
+  • El título <code>COMPLEMENTARIO</code> si necesitas otro nombre.<br>
+  Para <strong>agregar más foros</strong>, copia y pega un bloque <code>&lt;a class="banner"&gt;...&lt;/a&gt;</code> completo. Se acomodarán solos en la fila.
+</div>
+
+</body>
+</html>

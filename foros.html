@@ -4,111 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Foros Complementarios</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
     background: #ffffff;
-    font-family: 'Barlow', sans-serif;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 24px;
+    padding: 48px 24px;
   }
 
   .foros-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 20px;
     width: 100%;
     max-width: 1100px;
   }
 
   a.banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    display: block;
     text-decoration: none;
     border-radius: 10px;
     overflow: hidden;
-    position: relative;
-    height: 140px;
-    box-shadow: 0 6px 24px rgba(0,0,0,.25);
+    height: 110px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.18);
     transition: transform .2s, box-shadow .2s;
   }
 
   a.banner:hover {
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    box-shadow: 0 12px 36px rgba(0,0,0,.28);
   }
 
-  a.banner::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .banner-top {
-    position: relative; z-index: 2;
+  a.banner img {
     width: 100%;
-    padding: 12px 14px 6px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .banner-top .subtitle {
-    font-size: .7rem;
-    font-weight: 600;
-    color: rgba(255,255,255,.85);
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-  .banner-top .line {
-    flex: 1;
-    height: 2px;
-    background: rgba(255,255,255,.45);
-    border-radius: 2px;
-  }
-  .banner-top .icon-chat {
-    font-size: 1.3rem;
-    filter: drop-shadow(0 1px 3px rgba(0,0,0,.3));
-  }
-
-  .banner-text {
-    position: relative; z-index: 2;
-    width: 100%;
-    padding: 0 14px;
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-  .banner-text .title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.45rem;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    line-height: 1.1;
-    text-shadow: 0 2px 6px rgba(0,0,0,.3);
-  }
-
-  .banner-bottom {
-    position: relative; z-index: 2;
-    width: 100%;
-    padding: 0 12px 10px;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .banner-bottom .icon-people {
-    font-size: 2.2rem;
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,.35));
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   @media (max-width: 700px) {
@@ -123,52 +58,24 @@
 
 <div class="foros-grid">
 
-  <!-- 🔽 FORO 1: cambia href por tu link -->
-  <a class="banner" href="TU_LINK_AQUI" target="_blank"
-     style="background: linear-gradient(160deg,#b52a1e 0%,#e0392b 38%,#e8652a 68%,#f0984a 100%);">
-    <div class="banner-top">
-      <span class="subtitle">Foro 01</span>
-      <span class="line"></span>
-      <span class="icon-chat">💬</span>
-    </div>
-    <div class="banner-text"><span class="title">COMPLEMENTARIO</span></div>
-    <div class="banner-bottom"><span class="icon-people">👥</span></div>
+  <!-- FORO 1: cambia href y src -->
+  <a class="banner" href="TU_LINK_AQUI" target="_blank">
+    <img src="TU_IMAGEN_1.jpg" alt="Foro 01">
   </a>
 
-  <!-- 🔽 FORO 2: cambia href por tu link -->
-  <a class="banner" href="TU_LINK_AQUI" target="_blank"
-     style="background: linear-gradient(160deg,#c0300a 0%,#e84e1b 38%,#e87020 68%,#f5a83a 100%);">
-    <div class="banner-top">
-      <span class="subtitle">Foro 02</span>
-      <span class="line"></span>
-      <span class="icon-chat">💬</span>
-    </div>
-    <div class="banner-text"><span class="title">COMPLEMENTARIO</span></div>
-    <div class="banner-bottom"><span class="icon-people">👥</span></div>
+  <!-- FORO 2: cambia href y src -->
+  <a class="banner" href="TU_LINK_AQUI" target="_blank">
+    <img src="TU_IMAGEN_2.jpg" alt="Foro 02">
   </a>
 
-  <!-- 🔽 FORO 3: cambia href por tu link -->
-  <a class="banner" href="TU_LINK_AQUI" target="_blank"
-     style="background: linear-gradient(160deg,#b52a1e 0%,#e0392b 38%,#e8652a 68%,#f0984a 100%);">
-    <div class="banner-top">
-      <span class="subtitle">Foro 03</span>
-      <span class="line"></span>
-      <span class="icon-chat">💬</span>
-    </div>
-    <div class="banner-text"><span class="title">COMPLEMENTARIO</span></div>
-    <div class="banner-bottom"><span class="icon-people">👥</span></div>
+  <!-- FORO 3: cambia href y src -->
+  <a class="banner" href="TU_LINK_AQUI" target="_blank">
+    <img src="TU_IMAGEN_3.jpg" alt="Foro 03">
   </a>
 
-  <!-- 🔽 FORO 4: cambia href por tu link -->
-  <a class="banner" href="TU_LINK_AQUI" target="_blank"
-     style="background: linear-gradient(160deg,#c0300a 0%,#e84e1b 38%,#e87020 68%,#f5a83a 100%);">
-    <div class="banner-top">
-      <span class="subtitle">Foro 04</span>
-      <span class="line"></span>
-      <span class="icon-chat">💬</span>
-    </div>
-    <div class="banner-text"><span class="title">COMPLEMENTARIO</span></div>
-    <div class="banner-bottom"><span class="icon-people">👥</span></div>
+  <!-- FORO 4: cambia href y src -->
+  <a class="banner" href="TU_LINK_AQUI" target="_blank">
+    <img src="TU_IMAGEN_4.jpg" alt="Foro 04">
   </a>
 
 </div>
